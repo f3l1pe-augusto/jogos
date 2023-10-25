@@ -4,6 +4,7 @@ def jogar_adivinhacao():
     print("Bem vindo ao jogo de adivinhação!")
     print("*********************************\n")
 
+    #parâmetros do jogo
     numero_secreto = random.randrange(1, 101)
     num_pontos = 1000
 
