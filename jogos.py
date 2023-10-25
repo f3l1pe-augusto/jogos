@@ -1,6 +1,13 @@
 import adivinhacao
 import forca
 
+def reprocessamento():
+    res = input("\nDeseja continuar jogando(S/N)? ")
+    if res.upper() == 'N':
+        jogando = False
+    else:
+        jogando = True
+    return jogando
 def escolher_jogos():
     jogando = True
     while jogando:
@@ -17,9 +24,7 @@ def escolher_jogos():
         elif (res == 2):
             forca.jogar_forca()
 
-        res = input("\nDeseja continuar jogando(S/N)? ")
-        if res.upper() == 'N':
-            jogando = False
+        jogando = reprocessamento()
 
 if(__name__ == "__main__"):
     escolher_jogos()
