@@ -3,20 +3,24 @@ def jogar_forca():
     print("Bem vindo ao jogo de forca!")
     print("***************************\n")
 
-    #Define palavra secreta
+    #define palavra secreta
     palavra_secreta = "paramore"
 
-    #Variáveis
+    #variáveis
     enforcou = False
     acertou = False
-    index = 0
 
     while((not enforcou) and (not acertou)):
+
         chute = input("Qual letra?: ")
+        #remove espaços em branco
+        chute = chute.strip()
+
+        index = 0
         for letra in palavra_secreta:
-            if letra == chute:
+            if letra.upper() == chute.upper():
                 print("Encontrei a letra \"{}\" na posição \"{}\"".format(chute, index))
-                index+=1
+            index+=1
 
         print("Jogando...")
 
