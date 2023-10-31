@@ -1,4 +1,4 @@
-# jogos em Python
+# Jogos em Python
 
 Jogo de adivinhação e jogo da forca em Python
 
