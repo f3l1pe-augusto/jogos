@@ -28,9 +28,10 @@ def jogar_forca():
 
         print(letras_acertadas)
 
-        print("Jogando...")
+        if (letras_acertadas.count('_') == 0):
+            acertou = True
 
-    print("Fim do jogo!")
+    print("\nFim do jogo!")
 
 if(__name__ == "__main__"):
     jogar_forca()
