@@ -13,11 +13,11 @@ def jogar_adivinhacao():
 
     nivel = int(input("--> "))
 
-    if(nivel == 1):
+    if nivel == 1:
         num_tentativas = 7
-    elif(nivel == 2):
+    elif nivel == 2:
         num_tentativas = 5
-    elif(nivel == 3):
+    elif nivel == 3:
         num_tentativas = 3
     else:
         num_tentativas = 1
@@ -27,7 +27,7 @@ def jogar_adivinhacao():
 
         chute = int(input("Digite um número entre 1 e 100: "))
 
-        if(chute < 1 or chute > 100):
+        if chute < 1 or chute > 100:
             print("Você deve digitar um número entre 1  e 100!\n")
             continue
 
@@ -37,20 +37,20 @@ def jogar_adivinhacao():
         maior = chute > numero_secreto
         menor = chute < numero_secreto
 
-        if (acertou):
+        if acertou:
             print("Você acertou e fez {} pontos!\n".format(num_pontos))
             break
         else:
             num_pontos = num_pontos / 2
-            if (maior):
+            if maior:
                 print("Você errou! Seu chute foi maior do que o número secreto.\n")
-            elif (menor):
+            elif menor:
                 print("Você errou! Seu chute foi menor do que o número secreto.\n")
 
-            if (rodada == num_tentativas):
+            if rodada == num_tentativas:
                 print("O número secreto era {} e sua pontuação foi de {} pontos".format(numero_secreto, num_pontos))
 
     print("Fim do jogo!")
 
-if(__name__ == "__main__"):
+if __name__ == "__main__":
     jogar_adivinhacao()

@@ -19,12 +19,12 @@ def escolher_jogos():
 
         res = int(input("--> "))
 
-        if (res == 1):
+        if res == 1:
             adivinhacao.jogar_adivinhacao()
-        elif (res == 2):
+        elif res == 2:
             forca.jogar_forca()
 
         jogando = reprocessamento()
 
-if(__name__ == "__main__"):
+if __name__ == "__main__":
     escolher_jogos()
