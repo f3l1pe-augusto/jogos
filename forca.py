@@ -7,16 +7,13 @@ def jogar_forca():
     print("***********************************\n")
 
     #abertura do arquivo e inicialização da lista de possíveis palavras secretas
-    arquivo = open("palavras.txt", "r")
-    palavras = []
+    with open("palavras.txt") as arquivo:
+        palavras = []
 
-    #adição das possíveis palavras secretas a lista
-    for linha in arquivo:
-        linha = linha.strip().upper()
-        palavras.append(linha)
-
-    #fechamento do arquivo
-    arquivo.close()
+        #adição das possíveis palavras secretas a lista
+        for linha in arquivo:
+            linha = linha.strip().upper()
+            palavras.append(linha)
 
     #escolha aleatória para a palavra do jogo
     pos = random.randrange(0, len(palavras))
