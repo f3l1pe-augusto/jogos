@@ -1,10 +1,26 @@
-def jogar_forca():
-    print("\n***************************")
-    print("Bem vindo ao jogo de forca!")
-    print("***************************\n")
+import random
 
-    #define palavra secreta
-    palavra_secreta = "corinthians".upper()
+def jogar_forca():
+    print("\n***********************************")
+    print("Bem vindo ao jogo de forca!")
+    print("Dica: todas as palavras são bandas.")
+    print("***********************************\n")
+
+    #abertura do arquivo e inicialização da lista de possíveis palavras secretas
+    arquivo = open("palavras.txt", "r")
+    palavras = []
+
+    #adição das possíveis palavras secretas a lista
+    for linha in arquivo:
+        linha = linha.strip().upper()
+        palavras.append(linha)
+
+    #fechamento do arquivo
+    arquivo.close()
+
+    #escolha aleatória para a palavra do jogo
+    pos = random.randrange(0, len(palavras))
+    palavra_secreta = palavras[pos]
 
     #inicializa e preenche com "_" a lista de palavras acertadas (list comprehension)
     letras_acertadas = ["_" for letra in palavra_secreta]
@@ -14,6 +30,7 @@ def jogar_forca():
     acertou = False
     erros = 0
 
+    #mostra a quantidade de letras que a palavra secreta tem
     print(letras_acertadas)
 
     while (not enforcou) and (not acertou):
@@ -42,6 +59,7 @@ def jogar_forca():
             acertou = True
         if erros == len(palavra_secreta):
             print("\nVocê perdeu!")
+            print("A palavra secreta era {}".format(palavra_secreta))
             enforcou = True
 
 if __name__ == "__main__":
