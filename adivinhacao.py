@@ -1,7 +1,7 @@
 import random
 def jogar_adivinhacao():
     print("\n*********************************")
-    print("Bem vindo ao jogo de adivinhação!")
+    print("Bem vindo ao jogo da adivinhação!")
     print("*********************************\n")
 
     #parâmetros do jogo
